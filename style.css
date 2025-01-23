@@ -9,15 +9,17 @@
     font-weight: 400;
 }
 
+:root {
+    --vh: 1vh;
+}
+
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    height: calc(var(--vh) * 100);
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='4' fill='transparent'/><circle cx='12' cy='12' r='5' stroke='black' stroke-width='2' fill='none'/></svg>") 12 12, default;
 }
 
 header {
-    flex-shrink: 0;
+    height: 4rem;
     font-family: 'Walsheim';
     display: flex;
     gap: 20px;
@@ -44,7 +46,7 @@ header {
 }
 
 main {
-    height: calc(100vh - 8rem);
+    height: calc(var(--vh) * 100 - 8rem);
     position: relative;
     flex-shrink: 1;
 }
