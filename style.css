@@ -10,12 +10,14 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='4' fill='transparent'/><circle cx='12' cy='12' r='5' stroke='black' stroke-width='2' fill='none'/></svg>") 12 12, default;
 }
 
 header {
-    height: 4rem;
+    flex-shrink: 0;
     font-family: 'Walsheim';
     display: flex;
     gap: 20px;
@@ -44,10 +46,12 @@ header {
 main {
     height: calc(100vh - 8rem);
     position: relative;
+    flex-shrink: 1;
 }
 
 footer {
     height: 4rem;
+    flex-shrink: 0;
 }
 
 button:hover {
