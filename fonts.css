@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'HappyTimes';
+    src: url('fonts/happy-times/happy-times-at-the-ikob.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HappyTimes';
+    src: url('fonts/happy-times/happy-times-at-the-ikob_italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Walsheim';
+    src: url('fonts/GT_Walsheim/Normal/GTWalsheimPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Walsheim';
+    src: url('fonts/GT_Walsheim/Normal/GTWalsheimPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}

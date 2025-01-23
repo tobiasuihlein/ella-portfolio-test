@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Your page description">
+    <meta name="keywords" content="your, keywords, here">
+    <meta name="author" content="Your Name">
+    <!-- Prevent IE from using compatibility mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Ella Belén</title>
+
+</head>
+<body>
+    <header>
+        <!-- Header content -->
+            <div>
+                <button id="contact-info">info@ellabelen.de</button>
+            </div>
+            <div class="nav-bar">
+                <button class="nav-button">Work</button>
+                <button class="nav-button">About</button>
+            </div>
+    </header>
+
+    <main>
+        <!-- Main content -->
+        <div id="image-info-container">
+            <span id="current-image">01</span> / <span id="image-count"></span> &nbsp; <span id="current-image-description" style="font-weight: 500;"></span>
+        </div>
+        <div style="display: flex; height: 100%;">
+            <div id="scroll-container">
+                <img src="images/gegenhall/Magazine_Mockup_1Gegenhall.png" data-description="Bookazine Issue 01" class="slider-image">
+                <img src="images/gegenhall/Magazine_Mockup_1Gegenhall2.png" data-description="Bookazine Issue 02" class="slider-image">
+                <img src="images/gegenhall/Magazine_Mockup_1Gegenhall5.png" data-description="Bookazine Issue 03" class="slider-image">
+                <img src="images/gegenhall/Magazine_Mockup_cover4Gegenhall.jpg" data-description="Bookazine Issue 04" class="slider-image">
+                <img src="images/gegenhall/Magazine_Mockup_cover5Gegenhall.jpg" data-description="Bookazine Issue 05" class="slider-image">
+                <img src="images/gegenhall/gegenhall-visitenkarte-mockup.png" data-description="Visitenkarten Verlag" class="slider-image">
+                <img src="images/gegenhall/plakate-buchpreismockup2.png" data-description="Plakat Buchpreis 01" class="slider-image">
+                <img src="images/gegenhall/plakate-buchpreismockup3.png" data-description="Plakat Buchpreis 02" class="slider-image">
+                <img src="images/gegenhall/plakate-buchpreismockup4.png" data-description="Plakat Buchpreis 03" class="slider-image">
+                <img src="images/gegenhall/schal_1.png" data-description="Gegenhall Merch 01" class="slider-image" style="margin-left: 5rem">
+                <img src="images/gegenhall/schal_2.png" data-description="Gegenhall Merch 02" class="slider-image" style="margin-left: 5rem">
+                <div style="min-width: 40vw; display: flex; justify-content: flex-end; align-items: center;" id="rewind-button">
+                    <button style="margin-right: 5rem;" class="hide-desktop">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="butt" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+
+    <div id="bottom-bar">
+        <div class="project-description-bullet">
+            *<span class="happytimes">Wann?</span> &nbsp;<span>Sommer 2024</span>
+        </div>
+        <div class="project-description-bullet">
+            *<span class="happytimes">Was?</span> &nbsp;<span>Bookazine- eine kritische Auseinandersetzung mit den sozialen Medien</span>
+        </div>
+        <div class="project-description-bullet">
+            *<span class="happytimes">Entstanden</span> &nbsp;<span>im Rahmen meiner Abschlussarbeit an der Kunstschule Wandsbek</span>
+        </div>
+        <div class="project-description-text">
+            Obwohl es den Anschein hat, dass
+            wir beim Tippen und Wischen die
+            Kontrolle haben, sind es in Wirklichkeit
+            die Algorithmen, die bestimmen,
+            was uns angezeigt wird.
+            Diese Algorithmen sind darauf
+            ausgelegt, uns möglichst lange an
+            die Plattform zu binden, indem sie
+            ständig Inhalte präsentieren, die
+            unseren eigenen Interessen und
+            Meinungen entsprechen. Diese
+            kontinuierliche Bestätigung unserer
+            Ansichten führt dazu, dass wir
+            uns immer mehr von abweichenden
+            Meinungen abschotten und die
+            Vielfalt des gesellschaftlichen Diskurses
+            schwindet.
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <div class="bottom-bar-header" id="bottom-bar-button">
+                <svg id="bottom-bar-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="butt" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                <div class="project-description-title">Bookazine: Gegenhall</div>
+            </div>
+            <button id="next-button">
+                <div><span class="walsheim" style="font-style: normal;">*</span>Next</div>
+            </button>
+        </div>
+    </div>
+
+    <script>
+
+        /* Bottom bar behavior */
+
+        const isMobile = window.matchMedia('(max-width: 800px)').matches;
+        const isTouchDevice = () => {
+            return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+        };
+
+        const bottomBar = document.querySelector('#bottom-bar');
+        const bottomBarArrow = document.querySelector('#bottom-bar-arrow');
+        const bottomBarHeader = document.querySelector('.bottom-bar-header');
+        let clipPathClosed = 'inset(calc(100% - 6rem) 0 0 0)';
+
+        if (isMobile) {
+            clipPathClosed = 'inset(calc(100% - 4rem) 0 0 0)';
+        }
+
+        let isExpanded = false;
+
+        const openBottomBar = () => {
+            isExpanded = true;
+            bottomBar.style.clipPath = 'inset(0 0 0 0)';
+            bottomBarArrow.style.transform = 'rotate(135deg)';
+        }
+
+        const closeBottomBar = () => {
+            isExpanded = false;
+            bottomBar.style.clipPath = clipPathClosed;
+            bottomBarArrow.style.transform = 'rotate(0deg)';
+        }
+
+        if (isMobile) {
+            // Mobile - use click
+            bottomBarHeader.addEventListener('click', () => {
+                if (!isExpanded) {
+                    openBottomBar();
+                } else {
+                    closeBottomBar();
+                }
+            });
+            let touchStartY = 0;
+            let touchEndY = 0;
+            const swipeThreshold = 50; // minimum distance for swipe
+
+            bottomBar.addEventListener('touchstart', (e) => {
+                touchStartY = e.touches[0].clientY;
+            });
+
+            bottomBar.addEventListener('touchmove', (e) => {
+                touchEndY = e.touches[0].clientY;
+            });
+
+            bottomBar.addEventListener('touchend', () => {
+                const swipeDistance = touchEndY - touchStartY;
+                
+                // If swiped down more than threshold and bottom bar is expanded
+                if (swipeDistance > swipeThreshold && isExpanded) {
+                    closeBottomBar();
+                }
+                
+                // Reset values
+                touchStartY = 0;
+                touchEndY = 0;
+            });
+        } else {
+            // Desktop - use hover
+            bottomBarHeader.addEventListener('mouseenter', openBottomBar);
+            bottomBar.addEventListener('mouseleave', closeBottomBar);
+        }
+
+
+        /* Image slider srolling behavior */
+        document.querySelector('#scroll-container').addEventListener('wheel', (e) => {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                e.currentTarget.scrollLeft += e.deltaY;
+            }
+        }, { passive: false });
+
+        document.querySelector('#rewind-button').addEventListener('click', () => {
+            document.querySelector('#scroll-container').scrollTo({
+                left: 0,
+                behavior: 'smooth',
+            });
+        });
+
+        const contactInfo = document.querySelector('#contact-info');
+        let currentContent = 'info@ellabelen.de';
+        
+
+
+        /* Contact info element in nav bar */
+        function switchInfoContent() {
+            const email = 'info@ellabelen.de';
+            const insta = '@ella.belen';
+            const mobile = '+49 150 123456'
+            
+            switch (currentContent) {
+                case email:
+                    currentContent = insta;
+                    break;
+                case insta:
+                    currentContent = mobile;
+                    break;
+                case mobile:
+                    currentContent = email;
+                    break;
+            }
+            contactInfo.textContent = currentContent;
+        }
+
+        contactInfo.addEventListener('mouseover', switchInfoContent);
+
+
+        /* Image slider page counter */
+        const numberOfImages = document.querySelectorAll('.slider-image').length;
+        document.querySelector('#image-count').textContent = numberOfImages;
+
+        const scrollContainer = document.getElementById('scroll-container');
+        const currentImageCounter = document.getElementById('current-image');
+        const currentImageDescription = document.getElementById('current-image-description');
+        const images = document.querySelectorAll('.slider-image');
+
+        function updateCurrentImage() {
+            const containerRect = scrollContainer.getBoundingClientRect();
+            const containerCenter = containerRect.left + containerRect.width / 3 * 2;
+            
+            let closestImage = images[0];
+            let closestDistance = Infinity;
+            
+            images.forEach((image, index) => {
+                const imageRect = image.getBoundingClientRect();
+                const imageCenter = imageRect.left + imageRect.width / 3 * 2;
+                const distance = Math.abs(containerCenter - imageCenter);
+                
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestImage = image;
+                }
+            });
+            
+            const currentIndex = Array.from(images).indexOf(closestImage) + 1;
+            currentImageCounter.textContent = currentIndex.toString().padStart(2, '0');
+            
+            const description = closestImage.dataset.description;
+            currentImageDescription.textContent = description;
+        }
+
+        scrollContainer.addEventListener('scroll', updateCurrentImage);
+
+        updateCurrentImage();
+
+    </script>
+</body>
+</html>

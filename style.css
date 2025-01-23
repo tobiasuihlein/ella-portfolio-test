@@ -1,0 +1,237 @@
+.happytimes {
+    font-family: 'HappyTimes';
+    font-weight: 400;
+    font-style: italic;
+}
+
+.walsheim {
+    font-family: 'Walsheim', sans-serif;
+    font-weight: 400;
+}
+
+body {
+    height: 100vh;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='4' fill='transparent'/><circle cx='12' cy='12' r='5' stroke='black' stroke-width='2' fill='none'/></svg>") 12 12, default;
+}
+
+header {
+    height: 4rem;
+    font-family: 'Walsheim';
+    display: flex;
+    gap: 20px;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    justify-content: space-between;
+}
+
+.nav-bar {
+    justify-self: end;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 800px) {
+    header {
+        font-size: 1.2rem;
+        padding: 1rem 1.4rem;
+    }
+    .nav-bar {
+        gap: 1rem;
+    }
+}
+
+main {
+    height: calc(100vh - 8rem);
+    position: relative;
+}
+
+footer {
+    height: 4rem;
+}
+
+button:hover {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12,7 16,15.5 8,15.5" fill="white" stroke="black" stroke-width="1.5"/></svg>') 12 12, default;
+}
+
+.slider-image {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+div {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+div::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari and Opera */
+}
+
+#image-info-container {
+    font-family: 'Walsheim';
+    width: 100%;
+    font-size: 1rem;
+    min-width: 350px;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    line-height: 1.1rem;
+    text-align: left;
+    bottom: 1rem;
+}
+
+@media only screen and (max-width: 800px) {
+    #image-info-container {
+        text-align: center;
+        bottom: 0;
+    }
+}
+
+#next-button {
+    font-family: 'HappyTimes';
+    font-style: italic;
+    text-align: left; 
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+}
+
+#next-button:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+#next-button svg {
+    width: 3rem;
+    height: 3rem;
+}
+
+.nav-button:hover {
+    text-decoration: underline;
+}
+
+.bottom-bar-header {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    svg {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+.project-description-bullet {
+    font-family: 'Walsheim';
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+}
+
+.project-description-title {
+    font-family: 'Walsheim';
+    text-align: left; 
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.project-description-text {
+    font-family: 'Walsheim';
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    max-width: 550px;
+    margin-top: 1rem;
+}
+
+#bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+    z-index: 100;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    clip-path: inset(calc(100% - 6rem) 0 0 0);
+    transition: clip-path 0.3s ease-in-out;
+    svg {
+        transition: transform 0.3s ease-in-out;
+    }
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="70" text-anchor="middle" font-family="Arial" font-size="80" fill="black">*</text></svg>') 12 12, default;
+}
+
+@media only screen and (max-width: 800px) {
+    .bottom-bar-header {
+        svg {
+            width: 2rem;
+            height: 2rem;
+        }
+        margin-top: 1rem;
+    }
+    .project-description-title {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        text-decoration: underline;
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 2.5px;
+    }
+    .project-description-bullet {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
+    .project-description-text {
+        font-size: 1.0rem;
+        line-height: 1.2rem;
+    }
+    #next-button {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        margin-top: 1.2rem;
+    }
+    #bottom-bar {
+        padding: 1rem;
+        clip-path: inset(calc(100% - 4rem) 0 0 0);
+        border-radius: 12px 12px 0 0;
+    }
+}
+
+#rewind-button {
+    margin-left: 2rem;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='butt' stroke-linejoin='butt' class='lucide lucide-arrow-left'><path d='m12 19-7-7 7-7'/><path d='M19 12H5'/></svg>"), default;
+}
+
+#scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0 120px 0;
+}
+
+@media only screen and (max-width: 800px) {
+    #scroll-container {
+        padding-bottom: 120px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .hide-desktop {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .hide-mobile {
+        display: none;
+    }
+}
